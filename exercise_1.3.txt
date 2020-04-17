@@ -1,0 +1,7 @@
+(define (square a) (* a a))
+(define (sum-of-square a b) (+ (square a) (square b)))
+
+(define (sum-of-two-larger-num a b c)
+        (if (> a b) 
+             (if (> b c) (sum-of-square a b) (sum-of-square a c))
+             (if (> a c) (sum-of-square a b) (sum-of-square b c))))
