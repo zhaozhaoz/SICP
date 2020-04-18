@@ -1,0 +1,3 @@
+(define (GDB a b)
+        (if (= b 0) a  
+            (GDB b (remainder a b) )))
