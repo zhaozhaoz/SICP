@@ -1,0 +1,14 @@
+(define (product term a next b)
+        (if (> a b)
+            1
+            (* (term a)
+               (product term (next a) next b))))
+
+
+(define (pi n)
+        	(define (fenzi-func x) (if (odd? x) (+ x 1) (+ x 2)))
+        	(define (fenmu-func x) (if (odd? x) (+ x 2) (+ x 1)))
+        	(define (inc x) (+ x 1))
+        (* 4 
+           (exact->inexact (/ (product fenzi-func 1 inc n)
+         			      (product fenmu-func 1 inc n)))))

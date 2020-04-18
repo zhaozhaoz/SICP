@@ -1,0 +1,26 @@
+(define (sum term a next b)
+        (if (> a b) 
+            0
+            (+ (term a)
+               (sum term (next a) next b))))
+
+(define (inc a) (+ a 1))
+
+(define (sum-integers a b)
+        	(define (self a) a)
+        (sum self a inc b))
+
+(define (sum-cubes a b)
+		(sum cube a inc b))
+
+(define (pi-sum a b)
+			(define (part-pi a) (/ 1.0 (* a (+ a 2))))
+			(define (next a) (+ a 4))
+		(sum part-pi a next b))
+
+
+(define (integral f a b dx)
+			(define (part-pi a) (/ 1.0 (* a (+ a 2))))
+			(define (add-dx a) (+ a dx))
+		(* (sum f (+ a (/ dx 2.0)) add-dx b)
+		   dx))
