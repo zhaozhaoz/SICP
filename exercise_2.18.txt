@@ -1,0 +1,6 @@
+(define (reverse para-list result)
+        (if (null? para-list)
+            result
+            (reverse (cdr para-list)
+            		 (cons (car para-list)
+                           result))))
